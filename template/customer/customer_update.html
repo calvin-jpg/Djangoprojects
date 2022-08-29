@@ -1,0 +1,22 @@
+<form method="POST" action="{% url 'customer_update' customer.pk %}">
+    {% csrf_token %}
+    <div>
+        <label>
+            Age
+            <input type="number" name="age" value="{{customer.age}}">
+        </label>
+    </div> <div>
+    <label>First Name
+        <input type="text" name="first_name" value="{{customer.first_name}}">
+    </label>
+</div><div>
+    <label>Middle Name
+        <input type="text" name="middle_name" value="{{customer.middle_name}}">
+    </label>
+</div><div>
+    <label>Last Name
+        <input type="text" name="last_name" value="{{customer.last_name}}">
+    </label>
+</div>
+<button type="submit">Submit</button>
+</form>

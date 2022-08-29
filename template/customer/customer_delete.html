@@ -1,0 +1,7 @@
+<form method="POST" action="{% url 'customer_delete' customer.pk %}">
+    {% csrf_token %}
+    <p>Sure you want to delete {{customer.first_name}}? </p>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>

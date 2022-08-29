@@ -1,0 +1,55 @@
+<h1>Customer list</h1>
+<a href="{% url 'customer_create' %}">Add Customer</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Update</th>
+        <th>View</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for custom in customer %}
+
+    <tr>
+
+        <td>{{forloop.counter}}</td>
+        <td>
+            {{ custom.first_name }}
+
+        </td>
+        <td>
+            {{ custom.middle_name }}
+        </td>
+        <td>
+            {{ custom.last_name }}
+        </td>
+        <td>
+            {{ custom.age }}
+
+        </td>
+        <td>
+            <a href="{% url 'customer_update' custom.pk %}">Update Customer</a>
+
+
+        </td>
+        <td>
+           <a href="{% url 'customer_detail' custom.pk %}">View Detail</a>
+        </td>
+        <td>
+            <a href="{% url 'customer_delete' custom.pk %}">Delete Customer</a>
+        </td>
+
+
+    </tr>
+            {% endfor %}
+
+    </tbody>
+
+</table>

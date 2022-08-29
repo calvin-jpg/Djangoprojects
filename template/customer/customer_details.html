@@ -1,0 +1,15 @@
+<h1>
+    Customer List
+</h1>
+<a href="{% url 'customer_create' %}">Add Customer</a>
+<table>
+    <tbody>
+    <div>
+        {{customer.id}}
+        {{customer.first_name }}<br>
+        {{customer.middle_name}}<br>
+        {{customer.last_name}}<br>
+        {{customer.age}}
+    </div>
+    </tbody>
+</table>
